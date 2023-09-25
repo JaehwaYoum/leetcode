@@ -4,8 +4,8 @@
 # Date: Sep 1, 2023
 # Difficulty: Medium
 
-# Time:
-# Space:
+# Time: O(n)
+# Space: O(1)
 
 # Solution 1
 class Solution(object):
