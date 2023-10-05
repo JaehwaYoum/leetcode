@@ -24,8 +24,8 @@ class Solution(object):
         return letters + digits
 
 # Test case
-solution = Solution2()
+solution = Solution()
 
-s = ["h","e","l","l","o"]
-solution.reverseString(s)
-print(s)
+logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+result = solution.reorderLogFiles(logs)
+print(result)

@@ -9,7 +9,7 @@ import collections
 
 # Time: O(m*log(m)), Space: O(m)
 # m:the number of words in the paragraph
-class Solution1(object):
+class Solution(object):
     def mostCommonWord(self, paragraph, banned):
         """
         :type paragraph: str
@@ -17,8 +17,13 @@ class Solution1(object):
         :rtype: str
         """
 
+        # replace non-alphanumeric characters with spaces
         split = re.sub(r'[^\w]', ' ', paragraph).lower().split()
-        words = [word for word in split if word not in banned]  
+
+        # exclude words in the banned list
+        words = [word for word in split if word not in banned]
+
+        # return a Counter object to count the number of words
         word_cnt = collections.Counter(words)
 
         return word_cnt.most_common(1)[0][0]
