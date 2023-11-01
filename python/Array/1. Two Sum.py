@@ -40,7 +40,7 @@ class Solution2(object):
         nums_map = {}
         for i, v in enumerate(nums):
             if target-v in nums_map:
-                return [i, nums_map[target-v]]
+                return [nums_map[target-v], i]
             nums_map[v] = i
 
 # Test case

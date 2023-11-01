@@ -29,5 +29,4 @@ solution = Solution()
 
 nums = [1,2,1,3,5,6,4]
 result = solution.findPeakElement(nums)
-print(result)
-# 5
+print(result) # 5

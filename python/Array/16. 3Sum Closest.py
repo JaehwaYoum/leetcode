@@ -48,5 +48,4 @@ solution = Solution()
 nums = [-1,2,1,-4]
 target = -1
 result = solution.threeSumClosest(nums, target)
-print(result)
-# -1
+print(result) # -1

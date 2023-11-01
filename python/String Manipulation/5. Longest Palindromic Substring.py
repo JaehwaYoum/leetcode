@@ -18,7 +18,7 @@ class Solution(object):
                 right +=1
             return s[left+1:right-1]
 
-        # exceptional cases (string shorter than 1 character, string itself is palindrom)
+        # exceptional cases (string shorter than 1 character, string itself is palindrome)
         if len(s) < 2 or s == s[::-1]:
             return s
 

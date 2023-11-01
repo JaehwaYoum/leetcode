@@ -83,7 +83,16 @@ class Solution2(object):
                         left += 1
                     while left < right and nums[right] == nums[right - 1]:
                         right -= 1
+
                     left += 1
                     right -= 1
 
         return results
+
+# Test case
+solution = Solution2()
+
+nums = [2,7,11,15]
+target = 9
+result = solution.twoSum(nums, target)
+print(result)
