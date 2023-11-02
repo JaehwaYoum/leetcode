@@ -1,0 +1,67 @@
+# 104. Maximum Depth of Binary Tree
+# https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+# Date: Nov 1, 2023
+# Difficulty: Easy
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+import collections
+
+# Solution 1: BFS
+# Time: O(n), Space: O(n)
+class Solution1(object):
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return 0
+
+        queue = collections.deque([root])
+        depth = 0
+
+        while queue:
+            depth += 1
+            for _ in range(len(queue)):
+                curren_root = queue.popleft()
+                if curren_root.left:
+                    queue.append(curren_root.left)
+                if curren_root.right:
+                    queue.append(curren_root.right)
+
+        return depth
+
+# Solution 2: DFS
+# Time: O(n), Space: O(n)
+class Solution2(object):
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        def dfs(root, depth):
+            if not root:
+                return depth
+            return max(dfs(root.left, depth+1), dfs(root.right, depth+1))
+
+        return dfs(root, 0)
+
+# Test case
+solution = Solution2()
+
+root = TreeNode(3)
+root.left = TreeNode(9)
+root.right = TreeNode(20)
+root.right.left = TreeNode(15)
+root.right.right = TreeNode(7)
+
+result = solution.maxDepth(root)
+print(result) # 3
