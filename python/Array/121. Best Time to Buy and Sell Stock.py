@@ -4,8 +4,8 @@
 # Date: Jul 17, 2023
 # Difficulty: Easy
 
-# Time: O(n), Space: O(1)
 # Solution 1
+# Time: O(n), Space: O(1)
 class Solution1(object):
     def maxProfit(self, prices):
         """
@@ -27,8 +27,8 @@ class Solution1(object):
 
         return profit
 
-# Time: O(n), Space: O(1)
 # Solution 2
+# Time: O(n), Space: O(1)
 class Solution2(object):
     def maxProfit(self, prices):
         """
@@ -55,9 +55,27 @@ class Solution2(object):
 
         return max_profit
 
+
+# Solution 3
+# Time: O(n), Space: O(1)
+class Solution3(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        profit = 0
+        min_price = float('inf')
+
+        for price in prices:
+            min_price = min(price, min_price)
+            profit = max(profit, price-min_price)
+
+        return profit
+
 # Test case
-solution = Solution2()
+solution = Solution3()
 
 prices = [7,1,5,3,6,4]
 result = solution.maxProfit(prices)
-print(result)
+print(result) # 5
