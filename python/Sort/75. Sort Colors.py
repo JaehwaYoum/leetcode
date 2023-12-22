@@ -4,7 +4,7 @@
 # Date: Nov 2, 2023
 # Difficulty: Medium
 
-# Solution 1
+# Solution
 # Time: O(n), Space: O(1)
 class Solution(object):
     def sortColors(self, nums):

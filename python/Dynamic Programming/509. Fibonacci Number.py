@@ -5,6 +5,7 @@
 # Difficulty: Easy
 
 # Solution 1: bottom-up (tabulation)
+# Time: O(n), Space: O(n)
 import collections
 class Solution1(object):
     dp = collections.defaultdict(int)
@@ -20,6 +21,7 @@ class Solution1(object):
         return self.dp[n]
 
 # Solution 2: top-down (memoization)
+# Time: O(n), Space: O(n)
 class Solution2(object):
     dp = collections.defaultdict(int)
     def fib(self, n):
@@ -32,6 +34,7 @@ class Solution2(object):
         return self.dp[n]
 
 # Solution 3: brute-force
+# Time: O(2^n), Space: O(n)
 class Solution3(object):
     def fib(self, n):
         if n <= 1:
@@ -39,6 +42,7 @@ class Solution3(object):
         return self.fib(n - 1) + self.fib(n - 2)
 
 # Solution 4: use two variables
+# Time: O(n), Space: O(1)
 class Solution4(object):
     def fib(self, n):
         previous, current = 0, 1
@@ -50,6 +54,7 @@ class Solution4(object):
         return current
 
 # Solution 5: matrix
+# Time: O(log n), Space: O(1)
 import numpy as np
 class Solution5(object):
     def fib(self, n):

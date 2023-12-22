@@ -14,6 +14,8 @@ class TreeNode(object):
 # Time: O(n), Space: O(n), DFS
 class Solution(object):
     diameter = 0
+    # declared as class variable
+    # if declared local, it cannot be referenced before assignment
 
     def diameterOfBinaryTree(self, root):
         """

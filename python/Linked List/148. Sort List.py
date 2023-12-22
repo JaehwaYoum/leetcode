@@ -30,10 +30,6 @@ class Solution1(object):
 # Time: O(n*log(n)), Space: O(log(n))
 class Solution2(object):
     def sortList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
         def MergeTwoLists(l1, l2):
             if l1 and l2:
                 if l1.val > l2.val:

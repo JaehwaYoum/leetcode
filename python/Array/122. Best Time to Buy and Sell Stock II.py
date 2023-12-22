@@ -24,10 +24,6 @@ class Solution1(object):
 # Solution 2
 class Solution2(object):
     def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
         check = 0
         buy = sell = 0
         profit = 0
@@ -54,4 +50,4 @@ solution = Solution1()
 
 prices = [7,1,5,3,6,4]
 result = solution.maxProfit(prices)
-print(result)
+print(result) # 7
