@@ -4,6 +4,8 @@
 # Date: Oct 5, 2023
 # Difficulty: Easy
 
+from linkedlist import *
+
 # Solution
 # Time: O(n), Space: O(n)
 import collections
@@ -26,23 +28,6 @@ class Solution(object):
                 return False
 
         return True
-
-
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-def create_linked_list(arr):
-    if not arr:
-        return None
-    head = ListNode(arr[0])
-    current = head
-    for val in arr[1:]:
-        current.next = ListNode(val)
-        current = current.next
-    return head
-
 
 # Test case
 solution = Solution()

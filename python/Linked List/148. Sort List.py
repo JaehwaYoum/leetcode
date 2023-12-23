@@ -4,6 +4,8 @@
 # Date: Sep 30, 2023
 # Difficulty: Medium
 
+from linkedlist import *
+
 # Solution 1: convert to list and then back to linked list
 # Time: O(n*log(n)), Space: O(n)
 class Solution1(object):
@@ -53,32 +55,8 @@ class Solution2(object):
         # return the merged lists
         return MergeTwoLists(l1, l2)
 
-
-class ListNode(object):
-     def __init__(self, val=0, next=None):
-         self.val = val
-         self.next = next
-
-def create_linked_list(arr):
-    if not arr:
-        return None
-    head = ListNode(arr[0])
-    current = head
-    for val in arr[1:]:
-        current.next = ListNode(val)
-        current = current.next
-    return head
-
-def print_linked_list(head):
-    result = []
-    while head:
-        result.append(head.val)
-        head = head.next
-    print(result)
-
-
 # Test case
-solution = Solution()
+solution = Solution2()
 head = [-1,5,3,4,0]
 input_linked_list = create_linked_list(head)
 result_linked_list = solution.sortList(input_linked_list)

@@ -4,14 +4,7 @@
 # Date: Nov 1, 2023
 # Difficulty: Easy
 
-# Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
+from treenode import *
 import collections
 
 # Solution 1: BFS
