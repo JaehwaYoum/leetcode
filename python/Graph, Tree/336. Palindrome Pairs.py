@@ -70,7 +70,6 @@ class Trie:
 
         return result
 
-
 class Solution2(object):
     def palindromePairs(self, words):
         """
@@ -91,6 +90,6 @@ class Solution2(object):
 # Test case
 solution = Solution2()
 
-words = ["abcd", "dcba", "lls", "s", "sssll"]
+words = ['d', 'dcbbc', 'bbcd', 'cbcd', 'cbbc', 'dcbb']
 output = solution.palindromePairs(words)
 print(output) # [[0, 1], [1, 0], [2, 4], [3, 2]]

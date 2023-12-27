@@ -49,21 +49,6 @@ class Solution3(object):
             self.invertTree(root.right), self.invertTree(root.left)
         return root
 
-# Print Tree
-import collections
-def printTree(root):
-    if not root:
-        return
-    queue = collections.deque([root])
-    while queue:
-        node = queue.popleft()
-        print(node.val)
-
-        if node.left:
-            queue.append(node.left)
-        if node.right:
-            queue.append(node.right)
-
 # Test case
 root = TreeNode(4)
 root.left = TreeNode(2)

@@ -17,3 +17,19 @@ def tree_to_list(root):
 
     inorder_traversal(root)
     return result
+
+
+# Print Tree
+import collections
+def printTree(root):
+    if not root:
+        return
+    queue = collections.deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.val)
+
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)

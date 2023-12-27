@@ -6,6 +6,7 @@
 
 from treenode import *
 
+# Solution
 # Time: O(n), Space: O(n)
 class Solution(object):
     def isBalanced(self, root):

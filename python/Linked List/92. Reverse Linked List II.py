@@ -18,18 +18,25 @@ class Solution(object):
         if head is None or left == right:
             return head
 
-        root = start = ListNode(None)
+        root = ListNode(None)
         root.next = head
+        prev = root
 
         # go to the starting and ending points
         for _ in range(left - 1):
-            start = start.next
-        end = start.next
+            prev = prev.next
+        curr = prev.next
 
-        # iteratively change the nodes
+        # # iteratively change the nodes
+        # for _ in range(right - left):
+        #     temp, prev.next, curr.next = prev.next, curr.next, curr.next.next
+        #     prev.next.next = temp
+
         for _ in range(right - left):
-            temp, start.next, end.next = start.next, end.next, end.next.next
-            start.next.next = temp
+            temp = curr.next
+            curr.next = temp.next
+            temp.next = prev.next
+            prev.next = temp
 
         return root.next
 
