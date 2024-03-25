@@ -24,11 +24,11 @@ class Solution1(object):
         while queue:
             depth += 1
             for _ in range(len(queue)):
-                curren_root = queue.popleft()
-                if curren_root.left:
-                    queue.append(curren_root.left)
-                if curren_root.right:
-                    queue.append(curren_root.right)
+                current_root = queue.popleft()
+                if current_root.left:
+                    queue.append(current_root.left)
+                if current_root.right:
+                    queue.append(current_root.right)
 
         return depth
 

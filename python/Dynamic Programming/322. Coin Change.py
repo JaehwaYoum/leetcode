@@ -4,9 +4,15 @@
 # Date: Sep 24, 2023
 # Difficulty: Medium
 
+# Solution 1
 # Time: O(n * amount), Space: O(amount)
 class Solution1(object):
     def coinChange(self, coins, amount):
+        """
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
         dp = [0] + [float('inf') for i in range(amount)]
         for i in range(1, amount + 1):
             for coin in coins:
@@ -17,14 +23,10 @@ class Solution1(object):
         return dp[-1]
 
 
+# Solution 2
+# Time: O(n * amount), Space: O(amount)
 class Solution2(object):
     def coinChange(self, coins, amount):
-        """
-        :type coins: List[int]
-        :type amount: int
-        :rtype: int
-        """
-
         result = [amount + 1] * (amount + 1)
         result[0] = 0
 

@@ -22,7 +22,7 @@ class Solution(object):
         for i in range(2, len(nums)):
             dp[i] = max(dp[i-1], dp[i-2] + nums[i])
 
-        return dp.popitem()[1]
+        return dp.popitem()[1] # [1] corresponds to the value
 
 # Test case
 solution = Solution()

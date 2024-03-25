@@ -6,7 +6,7 @@
 
 
 # Time: O(n), Space: O(1)
-# Solution 1
+# Solution 1: Dynamic Programming
 class Solution1(object):
     def maxProfit(self, p):
         if len(p) == 0:
@@ -14,13 +14,14 @@ class Solution1(object):
 
         k = 2
         states = [0] + [-float('inf') for i in range(2 * k)]
-        states[1] = -p[0]
+        states[1] = -p[0] # cost of a buy on first day
 
         for i in range(1, len(p)):
             for j in range(k):
-                states[2 * j + 1] = max(states[2 * j + 1], states[2 * j] - p[i])
-                states[2 * j + 2] = max(states[2 * j + 2], states[2 * j + 1] + p[i])
-            print(states)
+                # maximum profit after buying for the jth transaction
+                states[2*j + 1] = max(states[2*j + 1], states[2*j] - p[i])
+                # maximum profit after selling for the jth transaction
+                states[2*j + 2] = max(states[2*j + 2], states[2*j + 1] + p[i])
 
         return max(0, states[-1])
 
