@@ -4,8 +4,8 @@
 # Date: Nov 1, 2023
 # Difficulty: Easy
 
-# Time: O(n log n), Space: O(n)
 # Solution 1
+# Time: O(n log n), Space: O(n)
 class Solution1(object):
     def arrayPairSum(self, nums):
         """
