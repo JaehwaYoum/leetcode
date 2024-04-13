@@ -17,16 +17,16 @@ class Solution(object):
         count = 0
         j, j_max = 0, 0
 
-        for i in range(len(nums)-1):
+        for i in range(len(nums) - 1):
 
-            if i+nums[i] > j_max:
-                j_max = i+nums[i]
+            if i + nums[i] > j_max:
+                j_max = i + nums[i]
 
-            if j_max >= len(nums) -1:
+            if j_max >= len(nums) - 1:
                 count += 1
                 break
 
-            if i==j:
+            if i == j:
                 count += 1
                 j = j_max
 
@@ -37,5 +37,4 @@ solution = Solution()
 
 nums =[2,3,5,2,1,1,2,4,3,1]
 result = solution.jump(nums)
-print(result)
-
+print(result) # 3
