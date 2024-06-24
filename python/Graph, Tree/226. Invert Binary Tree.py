@@ -5,15 +5,11 @@
 # Difficulty: Easy
 
 from treenode import *
-
-# Solution 1: BFS
 import collections
+
+# Solution 1: BFS (queue)
 class Solution1(object):
-    def invertTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
+    def invertTree(self, root: TreeNode) -> TreeNode:
         queue = collections.deque([root])
 
         while queue:
@@ -25,9 +21,9 @@ class Solution1(object):
 
         return root
 
-# Solution 2: DFS
+# Solution 2: DFS (stack)
 class Solution2(object):
-    def invertTree(self, root):
+    def invertTree(self, root: TreeNode) -> TreeNode:
         stack = collections.deque([root])
 
         while stack:
@@ -40,24 +36,19 @@ class Solution2(object):
 
         return root
 
-
-    # Solution 3: Pythonic
+# Solution 3: Pythonic
 class Solution3(object):
-    def invertTree(self, root):
+    def invertTree(self, root: TreeNode) -> TreeNode:
         if root:
             root.left, root.right = \
             self.invertTree(root.right), self.invertTree(root.left)
         return root
 
-# Test case
-root = TreeNode(4)
-root.left = TreeNode(2)
-root.right = TreeNode(7)
-root.left.left = TreeNode(1)
-root.left.right = TreeNode(3)
-root.right.left = TreeNode(6)
-root.right.right = TreeNode(9)
 
+# Test case
 solution = Solution3()
-inverted_tree = solution.invertTree(root)
+root = [4,2,7,1,3,6,9]
+root_treenode = list_to_tree(root)
+
+inverted_tree = solution.invertTree(root_treenode)
 printTree(inverted_tree)

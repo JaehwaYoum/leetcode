@@ -10,11 +10,7 @@ import collections
 # Solution 1: BFS
 # Time: O(n), Space: O(n)
 class Solution1(object):
-    def maxDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+    def maxDepth(self, root: TreeNode) -> int:
         if not root:
             return 0
 
@@ -35,11 +31,7 @@ class Solution1(object):
 # Solution 2: DFS
 # Time: O(n), Space: O(n)
 class Solution2(object):
-    def maxDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+    def maxDepth(self, root: TreeNode) -> int:
         def dfs(root, depth):
             if not root:
                 return depth
@@ -47,14 +39,23 @@ class Solution2(object):
 
         return dfs(root, 0)
 
+# Solution 3: DFS - 2
+class Solution3(object):
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
+        leftdepth = self.maxDepth(root.left)
+        rightdepth = self.maxDepth(root.right)
+
+        return 1 + max(leftdepth, rightdepth) # adding 1 is the parent node of the two subtrees 
+
+
 # Test case
-solution = Solution2()
+solution = Solution3()
 
-root = TreeNode(3)
-root.left = TreeNode(9)
-root.right = TreeNode(20)
-root.right.left = TreeNode(15)
-root.right.right = TreeNode(7)
+root = [3,9,20,None,None,15,7]
+root_treenode = list_to_tree(root)
 
-result = solution.maxDepth(root)
+result = solution.maxDepth(root_treenode)
 print(result) # 3

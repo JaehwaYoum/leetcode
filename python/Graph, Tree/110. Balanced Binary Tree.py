@@ -9,11 +9,7 @@ from treenode import *
 # Solution
 # Time: O(n), Space: O(n)
 class Solution(object):
-    def isBalanced(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+    def isBalanced(self, root: TreeNode) -> bool:
 
         def dfs(root):
             if not root:
@@ -32,12 +28,8 @@ class Solution(object):
 
 # Test case
 solution = Solution()
+root = [3,9,20,None,None,15,7]
+root_treenode = list_to_tree(root)
 
-root = TreeNode(3)
-root.left = TreeNode(9)
-root.right = TreeNode(20)
-root.right.left = TreeNode(15)
-root.right.right = TreeNode(7)
-
-result = solution.isBalanced(root)
-print(result) # 3
+result = solution.isBalanced(root_treenode)
+print(result) # True
