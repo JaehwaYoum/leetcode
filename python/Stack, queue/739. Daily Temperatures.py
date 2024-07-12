@@ -1,4 +1,4 @@
-    # 739. Daily Temperatures
+# 739. Daily Temperatures
 # https://leetcode.com/problems/daily-temperatures/
 
 # Date: Dec 18, 2023
