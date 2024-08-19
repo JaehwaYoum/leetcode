@@ -11,10 +11,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        return sorted([i**2 for i in nums])
         
 
 # Test case
 solution = Solution()
  nums = [-4,-1,0,3,10]
 result = solution.sortedSquares(nums)
-print(result)
+print(result) # [0,1,9,16,100]
