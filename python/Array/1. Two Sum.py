@@ -4,7 +4,7 @@
 # Date: Oct 5, 2023
 # Difficulty: Easy
 
-# Solution 1
+# Solution 1: Brute Force
 # Time: O(n^2), Space: O(1)
 class Solution1(object):
     def twoSum(self, nums, target):

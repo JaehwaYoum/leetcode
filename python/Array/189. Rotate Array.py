@@ -1,5 +1,7 @@
 # 189. Rotate Array
 # https://leetcode.com/problems/rotate-array/
+import collections
+
 
 # Date: Aug 30, 2023
 # Difficulty: Medium
@@ -15,7 +17,7 @@ class Solution1(object):
         """
 
         length = len(nums)
-        steps = k%length
+        steps = k % length
 
         nums[:] = nums[-steps:] + nums[:-steps]
 
@@ -23,11 +25,6 @@ class Solution1(object):
 # Time: O(n), Space: O(n)
 class Solution2(object):
     def rotate(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
         copy = [nums for nums in nums]
         length = len(nums)
 
@@ -38,12 +35,6 @@ class Solution2(object):
 # Time: O(n*k), Space: O(1)
 class Solution3(object):
     def rotate(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
-
         length = len(nums)
         steps = length-k if length>k else length-k%length
 
@@ -52,9 +43,16 @@ class Solution3(object):
         for j in range(steps):
             nums.remove(nums[0])
 
+# Solution 4 (deque)
+# Time: O(n*k), Space: O(1)
+class Solution4(object):
+    def rotate(self, nums, k):
+        nums_dq = collections.deque(nums)
+        nums_dq.rotate(k)
+        nums[:] = list(nums_dq)
+
 # Test case
 solution = Solution2()
-
 nums = [1,2,3,4,5,6,7]
 k = 3
 solution.rotate(nums, k)
