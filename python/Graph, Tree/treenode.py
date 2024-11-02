@@ -1,4 +1,5 @@
 # Definition for a binary tree node.
+import collections
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -17,7 +18,7 @@ def tree_to_list(root: TreeNode) -> list:
     inorder_traversal(root)
     return result
 
-def list_to_tree(nodes:list) -> TreeNode:
+def list_to_tree(nodes: list) -> TreeNode:
     if not nodes:
         return None
 
@@ -39,7 +40,6 @@ def list_to_tree(nodes:list) -> TreeNode:
 
 
 # Print Tree
-import collections
 def printTree(root: TreeNode) -> None:
     if not root:
         return

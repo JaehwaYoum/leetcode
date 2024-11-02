@@ -25,6 +25,9 @@ class Solution(object):
 solution = Solution()
 root = [1,2,3]
 root_treenode = list_to_tree(root)
+ #   1
+ #  / \
+ # 3   2
 
 result = solution.inorderTraversal(root_treenode)
 print(result)
