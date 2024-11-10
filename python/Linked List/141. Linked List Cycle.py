@@ -3,7 +3,7 @@
 
 # Date: Jul 6, 2024
 # Difficulty: Easy
-from linkedlist import create_linked_list, print_linked_list
+from linkedlist import *
 
 # Solution
 class Solution(object):
@@ -13,20 +13,24 @@ class Solution(object):
         :rtype: bool
         """
         # Floyd's cycle detection
-        if not head or head.next:
+        if not head or not head.next:
             return False
 
         slow = head
         fast = head.next
 
-        while slow != fast:
+        # Loop until fast or fast.next is None (no cycle) or slow meets fast (cycle detected)
+        while fast and fast.next:
+            if slow == fast:
+                return True
+
             slow = slow.next
             fast = fast.next.next
 
-        return True
+        return False
 
 
-# Test case
+    # Test case
 solution = Solution()
 head = [3,2,0,-4]
 input_linked_list = create_linked_list(head)

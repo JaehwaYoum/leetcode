@@ -41,4 +41,4 @@ l2 = [9,9,9,9]
 input_list_1 = create_linked_list(l1)
 input_list_2 = create_linked_list(l2)
 result_linked_list = solution.addTwoNumbers(input_list_1, input_list_2)
-print_linked_list(result_linked_list) # [5, 4, 3, 2, 1]
+print_linked_list(result_linked_list) # [8, 9, 9, 9, 0, 0, 0, 1]

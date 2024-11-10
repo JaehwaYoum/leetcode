@@ -49,7 +49,6 @@ class Solution2(object):
 
         char_list = 'abcdefghijklmnopqrstuvwxyz'
         count_list = [0] * 26
-        index = 0
 
         for i in s:
             index = char_list.index(i)

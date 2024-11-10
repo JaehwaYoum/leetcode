@@ -30,7 +30,11 @@ class Solution2(object):
             counter[char] -= 1
             if char in seen:
                 continue
-            while stack and char < stack[-1] and counter[stack[-1]] >0:
+
+            # check if the current character is smaller than the last character in stack
+            # ensure the last character in stack still has occurrences left
+            while stack and char < stack[-1] and counter[stack[-1]] > 0:
+                # remove the last character from the stack and remove it from seen
                 seen.remove(stack.pop())
             stack.append(char)
             seen.add(char)

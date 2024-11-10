@@ -16,6 +16,7 @@ class Solution(object):
             frequency[c] = frequency.get(c, 0) + 1
 
         for i in range(len(s)):
+            # return the character that appears only once
             if frequency[s[i]] == 1:
                 return i
         return -1

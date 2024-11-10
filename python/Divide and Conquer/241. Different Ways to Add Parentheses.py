@@ -11,8 +11,8 @@ class Solution(object):
         :type expression: str
         :rtype: List[int]
         """
-
         def compute(left, right, op):
+            # print("compute called for", left, right, op)
             results = []
             for l in left:
                 for r in right:
@@ -24,10 +24,14 @@ class Solution(object):
 
         results = []
         for index, value in enumerate(expression):
+            # print(index, value, expression)
             if value in '-+*':
+                # print("left called", expression[:index])
                 left = self.diffWaysToCompute(expression[:index])
+                # print("right called", expression[index+1:])
                 right = self.diffWaysToCompute(expression[index + 1:])
                 results.extend(compute(left, right, value))
+            # print("result", results, "\n")
         return results
 
 # Test case

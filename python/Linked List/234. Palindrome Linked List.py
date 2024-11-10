@@ -9,7 +9,7 @@ from linkedlist import *
 # Solution
 # Time: O(n), Space: O(n)
 import collections
-class Solution(object):
+class Solution1(object):
     def isPalindrome(self, head):
         """
         :type head: ListNode
@@ -24,13 +24,27 @@ class Solution(object):
             p = p.next
 
         while q:
+            if len(q) == 1:
+                return True
             if q.popleft() != q.pop():
                 return False
 
         return True
 
+class Solution2(object):
+    def isPalindrome(self, head):
+        p = head
+        lst = []
+
+        while p:
+            lst.append(p.val)
+            p = p.next
+
+        return lst == lst[::-1]
+
+
 # Test case
-solution = Solution()
+solution = Solution2()
 head = [1,2,2,1]
 input_linked_list = create_linked_list(head)
 result = solution.isPalindrome(input_linked_list)
