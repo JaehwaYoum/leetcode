@@ -53,7 +53,7 @@ class Solution4(object):
 
         return current
 
-# Solution 5: matrix
+# Solution 5: matrix multiplication
 # Time: O(log n), Space: O(1)
 import numpy as np
 class Solution5(object):
@@ -67,3 +67,8 @@ solution = Solution2()
 n = 4
 result = solution.fib(n)
 print(result) # 3
+
+# M = np.matrix([[0, 1], [1, 1]])
+# vec = np.array([[0], [1]])
+# for n in range(10):
+#     print(np.matmul(M ** n, vec)[0])
