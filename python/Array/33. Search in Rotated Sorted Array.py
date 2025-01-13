@@ -4,8 +4,8 @@
 # Date: Nov 22, 2023
 # Difficulty: Medium
 
-# Solution 1: recursive function
-# Time: O(log(n)), Space: O(1)
+# Solution 1: 2-step binary search
+# Time: O(log n), Space: O(1)
 class Solution1(object):
     def search(self, nums, target):
         """
@@ -16,7 +16,7 @@ class Solution1(object):
         if not nums:
             return -1
 
-        # find the pivot
+        # step 1: find the pivot
         left, right = 0, len(nums)-1
         # exit the loop when left >= right
         while left < right:
@@ -28,7 +28,7 @@ class Solution1(object):
 
         pivot = left
 
-        # find the target index in respect to the pivot
+        # step 2: find the target index in respect to the pivot
         left, right = 0, len(nums) - 1
         # left=right allows to check the middle element one last time
         while left <= right:
@@ -44,9 +44,39 @@ class Solution1(object):
                 return mid_pivot
         return -1
 
-# Solution 2: simplified linear search
-# Time: O(n), Space: O(1)
+
+# Solution 2: 1-step binary search
+# Time: O(log n), Space: O(1)
 class Solution2(object):
+    def search(self, nums, target):
+        left, right = 0, len(nums) - 1
+
+        while left <= right:
+            mid = left + (right - left) // 2
+
+            if nums[mid] == target:
+                return mid
+
+            # check if left subarray is sorted
+            if nums[left] <= nums[mid]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+
+            # check if right subarray is sorted
+            if nums[mid] <= nums[right]:
+                if nums[mid] <= target < nums[right]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+
+        return -1
+
+
+# Solution 3: Simplified linear search
+# Time: O(n), Space: O(1)
+class Solution3(object):
     def search(self, nums, target):
         try:
             tar_index = nums.index(target)
