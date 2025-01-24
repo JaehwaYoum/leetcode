@@ -4,6 +4,7 @@
 # Date: Feb 25, 2024
 # Difficulty: Hard
 
+# Time: O(n), Space: O(1) (modifies in-place)
 class Solution(object):
     def firstMissingPositive(self, nums):
         """
@@ -16,7 +17,9 @@ class Solution(object):
             # check if the element is in the valid array
             # and if the element is in the correct position
             while 1 <= nums[i] <= n-1 and nums[i] != nums[nums[i]-1]:
-                nums[i], nums[nums[i] - 1] = nums[nums[i] - 1], nums[i]
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
+                # cf) nums[i], nums[nums[i] - 1] = nums[nums[i] - 1], nums[i]
+                # is wrong because nums[i] is repeatedly being placed in the wrong index
 
         for i in range(n):
             if nums[i] != i + 1:
