@@ -4,14 +4,14 @@
 # Date: March 25, 2024
 # Difficulty: Easy
 
-# Solution
-class Solution(object):
+# Solution 1
+# Time: O(n), Space: O(1)
+class Solution1(object):
     def diagonalSum(self, mat):
         """
         :type mat: List[List[int]]
         :rtype: int
         """
-
         n = len(mat[0])
         result = 0
 
@@ -21,6 +21,21 @@ class Solution(object):
         if n % 2 == 1:
             mid = n//2
             result += mat[mid][mid]
+
+        return result
+
+
+# Solution 2
+# Time: O(n), Space: O(1)
+class Solution2(object):
+    def diagonalSum(self, mat):
+        n = len(mat)
+        result = 0
+
+        for i in range(n):
+            result += mat[i][i]
+            if i != n - 1 - i: # Avoid double-counting the middle element
+                result += mat[i][n - 1 - i]
 
         return result
 

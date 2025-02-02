@@ -4,8 +4,8 @@
 # Date: Sep 24, 2023
 # Difficulty: Medium
 
+# Solution
 # Time: O(n), Space: O(n)
-
 class Solution(object):
     def checkSubarraySum(self, nums, k):
         """
